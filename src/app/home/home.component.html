@@ -1,0 +1,10 @@
+<div class="background">
+  <div class="background__container">
+    <h1 class="background__title">
+      {{ home }} <span style="color: #000; font-size: 3rem">{{ page }}</span>
+    </h1>
+  </div>
+  <main class="home" style="height: auto">
+    <app-post-card class="home__card" [posts]="posts$ | async"></app-post-card>
+  </main>
+</div>

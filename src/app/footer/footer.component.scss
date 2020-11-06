@@ -1,0 +1,20 @@
+@use '../../css/variables.scss';
+
+.footer {
+  background: variables.$header-gradient;
+  padding: 10px 0;
+  text-align: center;
+
+  &__line {
+    height: 1px;
+    width: 90%;
+    margin: 10px auto 0;
+    background-color: variables.$white;
+  }
+
+  &__copyright {
+    padding: 5px 0 0;
+    color: variables.$white;
+    letter-spacing: 1px;
+  }
+}

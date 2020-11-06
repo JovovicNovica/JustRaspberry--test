@@ -1,0 +1,43 @@
+<section class="background">
+  <h2 class="background__title">
+    edit
+    <span style="color: #000; font-size: 3rem; margin-top: 100px">post</span>
+  </h2>
+  <div>
+    <form (ngSubmit)="updatePost()" class="form" [formGroup]="editForm">
+      <div class="form__box">
+        <input
+          class="form__input"
+          placeholder="title"
+          type="text"
+          maxlength="20"
+          formControlName="title"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form__box">
+        <input
+          class="form__input"
+          placeholder="subtitle"
+          type="text"
+          maxlength="25"
+          formControlName="subtitle"
+          spellcheck="false"
+        />
+      </div>
+      <div class="form__box">
+        <textarea
+          class="form__input"
+          type="text"
+          maxlength="500"
+          placeholder="body"
+          formControlName="body"
+          spellcheck="false"
+        ></textarea>
+      </div>
+      <div class="form__box form__box--button">
+        <button class="button button--primary" type="submit">{{ edit }}</button>
+      </div>
+    </form>
+  </div>
+</section>

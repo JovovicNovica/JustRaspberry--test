@@ -1,0 +1,27 @@
+@use '../css/variables.scss';
+
+.button {
+  border: 0;
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--primary {
+    color: variables.$white;
+    background: variables.$red;
+
+    &:disabled {
+      background: variables.$gray;
+      cursor: default;
+    }
+  }
+}

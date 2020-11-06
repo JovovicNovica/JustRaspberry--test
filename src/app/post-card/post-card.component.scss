@@ -1,0 +1,110 @@
+@use '../../css/variables.scss';
+@use '../../css/mixins.scss';
+
+@mixin padding {
+  padding: 0 0 15px 0;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  background: variables.$white;
+  text-align: center;
+  padding: 25px 10px 15px;
+  margin: 20px 40px;
+  border-radius: 10px;
+  -webkit-box-shadow: -2px 7px 30px -22px rgba(0, 0, 0, 0.77);
+  -moz-box-shadow: -2px 7px 30px -22px rgba(0, 0, 0, 0.77);
+  box-shadow: -2px 7px 30px -22px rgba(0, 0, 0, 0.77);
+  cursor: pointer;
+  letter-spacing: 1px;
+
+  @include mixins.xl {
+    margin: 20px 32px;
+  }
+
+  @include mixins.md {
+    width: 576px;
+  }
+
+  @include mixins.sm {
+    width: 300px;
+    margin: 20px auto;
+  }
+
+  &:hover {
+    padding: 25px 10px 15px;
+    border-radius: 10px;
+    -webkit-box-shadow: -2px 7px 30px -22px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: -2px 7px 30px -22px rgba(0, 0, 0, 0.77);
+    box-shadow: -2px 7px 30px -22px rgba(0, 0, 0, 0.77);
+    transition: all 0.4s ease;
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -o-transform: scale(1.04);
+    transform: scale(1.04);
+  }
+
+  &__title {
+    height: 55px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    word-break: break-word;
+    text-transform: uppercase;
+    @include padding;
+  }
+
+  &__subtitle {
+    @include padding;
+  }
+
+  &__line {
+    height: 1px !important;
+    width: 85%;
+    background-color: variables.$red;
+    margin: 0 auto 15px;
+  }
+
+  &__body {
+    height: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    text-align: justify;
+    @include padding;
+  }
+
+  &__buttons {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 15px;
+
+    @include mixins.md {
+      width: 495px;
+    }
+
+    @include mixins.sm {
+      width: 283px;
+    }
+  }
+
+  &__created {
+    font-size: 0.7rem;
+    line-height: 25px;
+  }
+
+  &__edit {
+    background-color: variables.$red;
+    padding: 3px 5px;
+    border-radius: 5px;
+    color: variables.$white;
+    margin-right: 15px;
+  }
+
+  &__trash {
+    line-height: 9px;
+  }
+}

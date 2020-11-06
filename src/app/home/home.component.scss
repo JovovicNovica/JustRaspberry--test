@@ -1,0 +1,41 @@
+@use '../../css/variables.scss';
+@use '../../css/mixins.scss';
+
+.home {
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 60px 0;
+
+  @include mixins.xl {
+    width: 768px;
+  }
+
+  @include mixins.md {
+    width: 576px;
+  }
+
+  @include mixins.sm {
+    width: 300px;
+    margin: 20px auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+
+    @include mixins.xl {
+      width: 768px;
+    }
+
+    @include mixins.md {
+      width: 576px;
+    }
+
+    @include mixins.sm {
+      width: 300px;
+      margin: 20px auto;
+    }
+  }
+}

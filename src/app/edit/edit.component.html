@@ -1,8 +1,10 @@
 <section class="background">
-  <h2 class="background__title">
-    edit
-    <span style="color: #000; font-size: 3rem; margin-top: 100px">post</span>
-  </h2>
+  <div class="background__container">
+    <h2 class="background__title">
+      edit
+      <span style="color: #000; font-size: 3rem; margin-top: 100px">post</span>
+    </h2>
+  </div>
   <div>
     <form (ngSubmit)="updatePost()" class="form" [formGroup]="editForm">
       <div class="form__box">
@@ -10,7 +12,7 @@
           class="form__input"
           placeholder="title"
           type="text"
-          maxlength="20"
+          maxlength="40"
           formControlName="title"
           spellcheck="false"
         />

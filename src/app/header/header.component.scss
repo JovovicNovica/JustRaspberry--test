@@ -39,7 +39,12 @@
     }
   }
 
+  &__home--icon {
+    cursor: pointer;
+  }
+
   &__add--icon {
+    cursor: pointer;
     @include mixins.md {
       position: absolute;
       right: 16px;

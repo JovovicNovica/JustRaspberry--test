@@ -19,6 +19,7 @@ import { InlineSVGModule } from 'ng-inline-svg';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './footer/footer.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FooterComponent } from './footer/footer.component';
     EditComponent,
     ConfirmDialogComponent,
     FooterComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,10 @@
 <header class="header">
   <div class="header__container">
     <div style="display: flex; padding-left: 16px" (click)="goTo('')">
-      <div [inlineSVG]="'../../../assets/icons/header/home.svg'"></div>
+      <div
+        class="header__home--icon"
+        [inlineSVG]="'../../../assets/icons/header/home.svg'"
+      ></div>
       <button mat-button class="header__links">home</button>
     </div>
     <div style="display: flex" (click)="goTo('/create-post')">

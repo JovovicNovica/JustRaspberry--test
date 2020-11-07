@@ -6,7 +6,9 @@
   <div class="card__buttons">
     <div class="card__created">{{ post.createdAt | date: "medium" }}</div>
     <div style="display: flex">
-      <div class="card__edit" (click)="goTo('edit/' + post.id)">{{ edit }}</div>
+      <div class="card__edit" (click)="goTo('edit/' + post.id)">
+        {{ edit }}
+      </div>
       <div
         class="card__trash"
         [inlineSVG]="'../../../assets/icons/card/trash.svg'"

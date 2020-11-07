@@ -157,3 +157,8 @@ table {
   background: $red;
   color: $white;
 }
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $white;
+}

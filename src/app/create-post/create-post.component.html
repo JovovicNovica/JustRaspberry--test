@@ -1,14 +1,16 @@
 <section class="background">
-  <h2 class="background__title">
-    {{ create }} <span style="color: #000; font-size: 3rem">{{ post }}</span>
-  </h2>
+  <div class="background__container">
+    <h2 class="background__title">
+      {{ create }} <span style="color: #000; font-size: 3rem">{{ post }}</span>
+    </h2>
+  </div>
   <form (ngSubmit)="createPost()" class="form" [formGroup]="createForm">
     <div class="form__box">
       <input
         class="form__input"
         placeholder="title"
         type="text"
-        maxlength="20"
+        maxlength="40"
         formControlName="title"
         spellcheck="false"
       />

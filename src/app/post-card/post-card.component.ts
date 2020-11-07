@@ -15,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class PostCardComponent implements OnInit {
   @Input() posts: Post[] = [];
   edit: string;
+
   constructor(
     private router: Router,
     private postService: PostService,

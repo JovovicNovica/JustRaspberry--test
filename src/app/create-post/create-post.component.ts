@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PostService } from '../shared/services/post.service';
+import { PostsStorage } from '../shared/services/posts-store.service';
 import { MessageService } from '../shared/services/message.service';
 import { Router } from '@angular/router';
-import { Post } from '../shared/model/post.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { ToastrService } from 'ngx-toastr';
@@ -20,8 +19,8 @@ export class CreatePostComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private postService: PostService,
     private messageService: MessageService,
+    private postsStorage: PostsStorage,
     private router: Router,
     private dialog: MatDialog,
     private toastr: ToastrService
@@ -49,7 +48,8 @@ export class CreatePostComponent implements OnInit {
     confirmDialog.afterClosed().subscribe((result) => {
       if (result == 'true') {
         const post = this.createForm.value;
-        this.postService.createPost(post).subscribe(() => {
+        this.postsStorage.createPost(post).subscribe(() => {
+          this.postsStorage.loadAllPosts();
           this.router.navigateByUrl('');
           this.toastr.success('Successfully created post!');
         });

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PostService } from '../shared/services/post.service';
+import { PostsStorage } from '../shared/services/posts-store.service';
 import { MessageService } from '../shared/services/message.service';
 import { Post } from '../shared/model/post.model';
 import { map } from 'rxjs/operators';
@@ -27,8 +27,8 @@ export class EditComponent implements OnInit {
     private dialog: MatDialog,
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private postService: PostService,
     private messageService: MessageService,
+    private postsStorage: PostsStorage,
     private toastr: ToastrService
   ) {}
 
@@ -41,7 +41,7 @@ export class EditComponent implements OnInit {
     });
 
     this.postId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    const loadPosts$ = this.postService.loadPosts();
+    const loadPosts$ = this.postsStorage.storedPosts$;
     this.posts$ = loadPosts$.pipe(
       map((post) => post.find((post) => post.id == this.postId))
     );
@@ -73,7 +73,7 @@ export class EditComponent implements OnInit {
           updatedAt: undefined,
         };
 
-        this.postService.edtiPost(changes).subscribe(() => {
+        this.postsStorage.editPost(changes).subscribe(() => {
           this.router.navigateByUrl(''),
             this.toastr.success('Successfully changed post!');
         });

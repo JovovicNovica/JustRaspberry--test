@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../shared/services/post.service';
-import { LoadingService } from '../shared/services/loading.service';
+import { PostsStorage } from '../shared/services/posts-store.service';
 import { Post } from '../shared/model/post.model';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +13,7 @@ export class HomeComponent implements OnInit {
   home: string;
   page: string;
 
-  constructor(
-    private postService: PostService,
-    private loadingService: LoadingService
-  ) {}
+  constructor(private postsStorage: PostsStorage) {}
 
   ngOnInit(): void {
     this.home = 'home';
@@ -27,8 +22,6 @@ export class HomeComponent implements OnInit {
   }
 
   reloadPosts(): void {
-    const loadPosts$ = this.postService.loadPosts();
-    const loadePosts$ = this.loadingService.showLoader(loadPosts$);
-    this.posts$ = loadePosts$.pipe(map((post) => post));
+    this.posts$ = this.postsStorage.storedPosts$;
   }
 }

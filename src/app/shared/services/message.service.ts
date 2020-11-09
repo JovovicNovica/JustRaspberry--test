@@ -15,7 +15,7 @@ export class MessageService {
 
   constructor() {}
 
-  showErrors(error: string) {
+  showErrors(error: string): void {
     this.errSubject.next(error);
   }
 }

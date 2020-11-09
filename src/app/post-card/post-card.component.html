@@ -1,6 +1,6 @@
 <article class="card" *ngFor="let post of posts; let i = index">
   <div class="card__title">{{ post.title }}</div>
-  <div class="card__subtitle">{{ post.subtitle }}</div>
+  <div class="card__subtitle card__subtitle--merge">{{ post.subtitle }}</div>
   <div class="card__line"></div>
   <div class="card__body">{{ post.body }}</div>
   <div class="card__buttons">

@@ -37,7 +37,7 @@ export class PostCardComponent implements OnInit {
       },
     });
     confirmDialog.afterClosed().subscribe((result) => {
-      if (result == 'true') {
+      if (result === 'true') {
         this.posts.splice(index, 1);
         this.postService.deletePost(post.id).subscribe(() => {
           this.toastr.success('Post is deleted!');

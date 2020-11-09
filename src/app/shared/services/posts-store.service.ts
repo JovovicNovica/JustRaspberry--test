@@ -57,7 +57,7 @@ export class PostsStorage {
   editPost(changes: Post): Observable<any> {
     const newPosts = this.subject.getValue();
 
-    const index = newPosts.findIndex((post) => post.id == changes.id);
+    const index = newPosts.findIndex((post) => post.id === changes.id);
 
     newPosts[index] = changes;
 

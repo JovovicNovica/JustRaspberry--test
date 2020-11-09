@@ -25,7 +25,7 @@ export class UuidInterceptor implements HttpInterceptor {
     });
 
     const clone = request.clone({
-      headers: headers,
+      headers,
     });
 
     return next.handle(clone);

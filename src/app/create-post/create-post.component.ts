@@ -46,7 +46,7 @@ export class CreatePostComponent implements OnInit {
       },
     });
     confirmDialog.afterClosed().subscribe((result) => {
-      if (result == 'true') {
+      if (result === 'true') {
         const post = this.createForm.value;
         this.postsStorage.createPost(post).subscribe(() => {
           this.postsStorage.loadAllPosts();

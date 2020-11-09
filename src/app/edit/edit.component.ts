@@ -43,7 +43,7 @@ export class EditComponent implements OnInit {
     this.postId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     const loadPosts$ = this.postsStorage.storedPosts$;
     this.posts$ = loadPosts$.pipe(
-      map((post) => post.find((post) => post.id == this.postId))
+      map((post) => post.find((post) => post.id === this.postId))
     );
     this.posts$.subscribe((post) =>
       this.editForm.patchValue({
@@ -63,7 +63,7 @@ export class EditComponent implements OnInit {
       },
     });
     confirmDialog.afterClosed().subscribe((result) => {
-      if (result == 'true') {
+      if (result === 'true') {
         const changes = {
           title: this.editForm.value.title,
           subtitle: this.editForm.value.subtitle,

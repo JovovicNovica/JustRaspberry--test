@@ -20,11 +20,11 @@ export class LoadingService {
     );
   }
 
-  loadingOn() {
+  loadingOn(): void {
     this.loadingSubject.next(true);
   }
 
-  loadingOff() {
+  loadingOff(): void {
     this.loadingSubject.next(false);
   }
 }
